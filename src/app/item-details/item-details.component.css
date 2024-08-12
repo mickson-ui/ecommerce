@@ -1,0 +1,8 @@
+.card-img-top {
+  width: 400px; /* Ensure the image is responsive */
+  height: 500px;
+  object-fit: cover;
+}
+.fs-6{
+  font-size: 0.8rem !important;
+}

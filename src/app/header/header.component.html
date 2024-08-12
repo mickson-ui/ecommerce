@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-md bg-white">
+  <div class="container-md">
+    <a routerLink="" class="navbar-brand" href="#"
+      ><i class="bi bi-alt me-2"></i> Shopcart</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="bi bi-list"></span>
+    </button>
+    <div class="navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <ng-container *ngFor="let mainNav of navLinks[0].main">
+          <li class="nav-item mx-2">
+            <a [routerLink]="mainNav.routerLink">
+              <span>{{ mainNav.label }}</span>
+            </a>
+          </li>
+        </ng-container>
+      </ul>
+      <div class="d-flex gap-3">
+        <ul class="navbar-nav">
+          <ng-container *ngFor="let navLink of navLinks[0].subLinks">
+            <li class="nav-item dropdown">
+              <a
+                [routerLink]="navLink.routerLink"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="nav-link"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i [class]="navLink.icon" class="mx-2"></i>
+                <span>{{ navLink.label }}</span>
+                <i [class]="navLink.icon2" class="mx-2"></i>
+              </a>
+              <ul *ngIf="navLink.label === 'Account'" class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item text-danger" href="#">Login</a>
+                </li>
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
