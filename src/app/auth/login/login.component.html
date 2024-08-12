@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
+      <div class="col-md-10">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              autocomplete="email"
+              placeholder="Enter email"
+              [ngClass]="{ 'is-invalid': email.touched && email.invalid }"
+            />
+            <div
+              *ngIf="email.touched && email.invalid"
+              class="invalid-feedback"
+            >
+              <div *ngIf="email.errors?.['required']">Email is required</div>
+              <div *ngIf="email.errors?.['email']">Invalid email address</div>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+              autocomplete="current-password"
+              placeholder="Password"
+              [ngClass]="{
+                'is-invalid': password.touched && password.invalid
+              }"
+            />
+            <div
+              *ngIf="password.touched && password.invalid"
+              class="invalid-feedback"
+            >
+              <div *ngIf="password.errors?.['required']">
+                Password is required
+              </div>
+              <div *ngIf="password.errors?.['minlength']">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+          <div class="d-grid">
+            <button
+              type="submit"
+              class="btn btn-primary btn-md"
+              [disabled]="loginForm.invalid"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <img
+        src="https://images.unsplash.com/photo-1722925541914-ae7cf154d606?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt=""
+        class="img img-fluid border rounded"
+      />
+    </div>
+  </div>
+</div>

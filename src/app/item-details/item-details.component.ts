@@ -2,11 +2,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MockItemService } from '../mock-item.service';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-item-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './item-details.component.html',
   styleUrl: './item-details.component.css'
 })

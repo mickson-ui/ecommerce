@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule} from '@angular/router';
+import { LoginComponent } from '../auth/login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -14,29 +15,29 @@ export class HeaderComponent {
     {
       main:[
         {
-          routerLink: 'categories',
+          routerLink: '/categories',
           icon: 'fa-regular fa-user',
           label: 'Categories'
         },
         {
-          routerLink: 'deals',
+          routerLink: '/deals',
           icon: 'fa-regular fa-user',
           label: 'Deals'
         },
         {
-          routerLink: 'contact',
+          routerLink: '/contact',
           icon: 'fa-regular fa-user',
           label: 'Contact'
         }
     ],
       subLinks:[
         {
-          routerLink: 'cart',
+          routerLink: '/cart',
           icon: 'bi bi-bag',
           label: 'Cart'
         },
         {
-          routerLink: 'account',
+          routerLink: '/account',
           icon: 'fa-regular fa-user',
           label: 'Account',
           icon2: 'fa-solid fa-angle-down'

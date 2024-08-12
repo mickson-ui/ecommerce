@@ -1,9 +1,10 @@
+<app-header />
 <div class="container-md mt-4">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-7">
       <div *ngIf="item" class="row">
-        <img [src]="item.imageUrl" alt="" class="col-md-6 card-img-top" />
-        <div class="col-md-6">
+        <img [src]="item.imageUrl" alt="" class="img-fluid col-md-5 card-img-top rounded" />
+        <div class="col-md-5">
           <h2>{{ item.name }}</h2>
           <p>{{ item.rating }}</p>
           <p>{{ item.description }}</p>
@@ -11,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-5">
       <div class="card">
         <div class="card-header">Order Details</div>
         <div class="card-body">
@@ -74,7 +75,7 @@
           </div>
           <div class="list-group-item d-flex justify-content-between pb-0 pt-3">
             <p>Total</p>
-            <span class="fw-bold">${{total}}</span>
+            <span class="fw-bold">${{ total }}</span>
           </div>
           <button class="btn btn-primary mx-3 mt-2">Buy Now</button>
           <button class="btn btn-outline-primary mx-3 my-2">

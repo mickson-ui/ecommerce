@@ -1,0 +1,13 @@
+.img{
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+}

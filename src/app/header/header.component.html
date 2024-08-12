@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md bg-white">
   <div class="container-md">
-    <a routerLink="" class="navbar-brand" href="#"
+    <a routerLink="/home" class="navbar-brand" href="#"
       ><i class="bi bi-alt me-2"></i> Shopcart</a
     >
     <button
@@ -45,7 +45,9 @@
                 <li><a class="dropdown-item" href="#">Settings</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item text-danger" href="#">Login</a>
+                  <a class="dropdown-item text-danger" routerLink="/login"
+                    >Login</a
+                  >
                 </li>
               </ul>
             </li>
@@ -55,4 +57,4 @@
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
