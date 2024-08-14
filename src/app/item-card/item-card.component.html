@@ -5,20 +5,24 @@
       class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mb-3"
     >
       <div class="card item-card">
-        <img class="card-img-top" alt="item image" [src]="item.imageUrl" />
+        <img
+          class="card-img-top"
+          alt="item image"
+          [src]="item.productImageUrl"
+        />
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <h5 class="card-title">{{ item.name }}</h5>
-            <h5 class="card-title">${{ item.price }}</h5>
+            <h5 class="card-title">{{ item.productName }}</h5>
+            <h5 class="card-title">${{ item.productPrice }}</h5>
           </div>
-          <p class="card-text">{{ item.description }}</p>
+          <!-- <p class="card-text">{{ item.productDescription }}</p> -->
           <p class="card-text">
-            <small class="text-muted">{{ item.rating }}</small>
+            <small class="text-muted">{{ item.categoryName }}</small>
           </p>
           <div class="row gap-2">
             <button
               class="btn btn-primary btn-sm"
-              [routerLink]="['/item', item.id]"
+              [routerLink]="['/item', item.productId]"
             >
               View Details
             </button>
