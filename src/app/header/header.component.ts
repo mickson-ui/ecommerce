@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { LoginComponent } from '../auth/login/login.component';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,25 @@ import { LoginComponent } from '../auth/login/login.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  userName: string | null = null;
+
+  constructor(private authService: AuthService) {
+  }
+
+  ngOnInit(): void {
+    this.userName = this.authService.getUserName()
+
+    if(this.userName){
+      this.navLinks[0].subLinks.forEach(link => {
+        if(link.label === 'Account'){
+          link.label = this.userName!
+        }
+      })
+    }
+  }
+
+
   navLinks = [
     {
       main:[
@@ -20,9 +39,9 @@ export class HeaderComponent {
           label: 'Categories'
         },
         {
-          routerLink: '/deals',
+          routerLink: '/offers',
           icon: 'fa-regular fa-user',
-          label: 'Deals'
+          label: 'Offers'
         },
         {
           routerLink: '/contact',

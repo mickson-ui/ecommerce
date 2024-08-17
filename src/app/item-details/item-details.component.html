@@ -3,12 +3,16 @@
   <div class="row">
     <div class="col-xl-8 col-lg-6 col-md-6 col-sm-7">
       <div *ngIf="item" class="row">
-        <img [src]="item.imageUrl" alt="" class="img-fluid col-md-5 card-img-top rounded" />
+        <img
+          [src]="item.productImageUrl"
+          alt=""
+          class="img-fluid col-md-5 card-img-top rounded"
+        />
         <div class="col-md-5">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.rating }}</p>
-          <p>{{ item.description }}</p>
-          <p>Price: ${{ item.price }}</p>
+          <h2>{{ item.productName }}</h2>
+          <p>{{ item.categoryName }}</p>
+          <!-- <p>{{ item.description }}</p> -->
+          <p>Price: ${{ item.productPrice }}</p>
         </div>
       </div>
     </div>

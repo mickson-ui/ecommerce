@@ -6,20 +6,22 @@
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <input
-              type="email"
+              type="username"
               class="form-control"
-              id="email"
-              formControlName="email"
-              autocomplete="email"
-              placeholder="Enter email"
-              [ngClass]="{ 'is-invalid': email.touched && email.invalid }"
+              id="username"
+              formControlName="username"
+              autocomplete="username"
+              placeholder="Enter username"
+              [ngClass]="{ 'is-invalid': username.touched && username.invalid }"
             />
             <div
-              *ngIf="email.touched && email.invalid"
+              *ngIf="username.touched && username.invalid"
               class="invalid-feedback"
             >
-              <div *ngIf="email.errors?.['required']">Email is required</div>
-              <div *ngIf="email.errors?.['email']">Invalid email address</div>
+              <div *ngIf="username.errors?.['required']">Email is required</div>
+              <div *ngIf="username.errors?.['username']">
+                Invalid email address
+              </div>
             </div>
           </div>
 
